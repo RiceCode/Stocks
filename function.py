@@ -106,14 +106,14 @@ def panic_sell(wallet):
 
 
 #saving or loading previous wallet
-def load():
-    pickle_in = open('data.pickle', 'rb')
+def load(name):
+    pickle_in = open(f'{name}.pickle', 'rb')
     wallet = pickle.load(pickle_in)
     print("loaded")
     return(wallet)
 
-def save(wallet):
-    pickle_out = open('data.pickle', 'wb')
+def save(wallet, name):
+    pickle_out = open(f'{name}.pickle', 'wb')
     pickle.dump(wallet, pickle_out)
     pickle_out.close()
     print("saved. you may close.")
